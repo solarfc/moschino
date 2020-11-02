@@ -1,0 +1,99 @@
+/*
+    review style
+ */
+
+.review {
+  background: #fff5f7;
+  padding: 76px 0 110px;
+
+  h3 {
+    max-width: 360px;
+    position: relative;
+    z-index: 9;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 320px;
+      height: 280px;
+      background: url("../img/review/big-quotes.png") no-repeat center/cover;
+      position: absolute;
+      top: -41px;
+      left: 98px;
+      z-index: -1;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    &-block {
+      width: 790px;
+      margin: -58px 0 0 auto;
+      position: relative;
+      right: -20px;
+
+      figure {
+        box-sizing: border-box;
+        width: 360px;
+        padding: 115px 30px 44px;
+        background: #e9fffe;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        position: relative;
+
+        p {
+
+        }
+
+        h6 {
+          color: #5e2552;
+          margin-top: 12px;
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          width: 50px;
+          height: 45px;
+          background: url("../img/review/small-quotes.png") no-repeat center/cover;
+          position: absolute;
+          top: 51px;
+          left: 30px;
+        }
+      }
+
+      .owl-nav {
+        margin: 5px 0 0 20px;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 157px;
+        height: 102px;
+        background: url("../img/review/snow.png") no-repeat center/cover;
+        position: absolute;
+        top: 0;
+        right: -5px;
+      }
+    }
+
+    >p {
+      color: #444;
+      position: absolute;
+      bottom: 85px;
+      right: 0;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    img.girl {
+      position: absolute;
+      bottom: -73px;
+      left: -263px;
+    }
+
+  }
+
+}

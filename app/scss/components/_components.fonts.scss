@@ -1,0 +1,27 @@
+/*
+    font face
+ */
+
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../fonts/Inter-Bold.woff");
+}
+$ib : "Inter-Bold";
+
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("../fonts/Inter-Medium.woff");
+}
+$im : "Inter-Medium";
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("../fonts/Inter-Regular.woff");
+}
+$ir : "Inter-Regular";
+
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url("../fonts/Inter-SemiBold.woff");
+}
+$isb : "Inter-SemiBold";

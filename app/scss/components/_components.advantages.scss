@@ -1,0 +1,184 @@
+/*
+    advantages style
+ */
+
+.advantages {
+  background: #f6d2d6;
+  padding: 101px 0 45px;
+
+  .container {
+    position: relative;
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      width: 199px;
+      height: 113px;
+      background: url("../img/advantages/love.png") no-repeat center/cover;
+      top: 229px;
+      left: -63px;
+    }
+
+    &:after {
+      width: 423px;
+      height: 116px;
+      background: url("../img/advantages/moschino.png") no-repeat center/cover;
+      top: 227px;
+      right: -287px;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    &-block {
+      display: flex;
+      //justify-content: space-between;
+
+      figure {
+        width: 263px;
+        position: relative;
+
+        h5 {
+          color: #5e2552;
+          margin: 0 0 15px 88px;
+        }
+
+        &:before {
+          font-family: $isb, sans-serif;
+          font-size: 36px;
+          line-height: 44px;
+          text-align: center;
+          color: #5e2552;
+          display: block;
+          box-sizing: border-box;
+          width: 70px;
+          padding: 17px 0;
+          background: url("../img/advantages/star.png") no-repeat center/cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &:nth-child(2) {
+          margin-left: auto;
+        }
+      }
+
+      &__img {
+        position: absolute;
+        //z-index: 9;
+      }
+
+      &:first-child {
+
+        figure {
+
+          &:first-child {
+
+            &:before {
+              content: "1";
+            }
+          }
+
+          &:nth-child(2) {
+
+            &:before {
+              content: "2";
+            }
+          }
+        }
+
+        .advantages__content-block__img {
+          top: 54px;
+          left: 92px;
+        }
+      }
+
+      &:nth-child(2) {
+        margin: 228px auto 23px;
+
+        figure {
+
+          &:first-child {
+
+            &:before {
+              content: "3";
+            }
+          }
+
+          &:nth-child(2) {
+
+            &:before {
+              content: "4";
+            }
+          }
+        }
+
+        .advantages__content-block__img {
+          top: 68px;
+          right: 101.7px;
+        }
+      }
+    }
+
+    .sale, .price {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .sale {
+      top: 195px;
+    }
+
+    .price {
+      top: 288px;
+      text-align: center;
+
+      span {
+
+        &.old-price {
+          margin-right: 0;
+        }
+
+        &.new-price {
+          display: block;
+          color: #fff;
+        }
+      }
+    }
+
+    .to-order {
+      margin: 0 auto;
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+
+    &:before {
+      width: 560px;
+      height: 560px;
+      background: linear-gradient(90deg, #f88ca5 0%, #fe527a 100%);
+      border-radius: 50%;
+      top: 0;
+      left: 50%;
+    }
+
+    &:after {
+      width: 435px;
+      height: 195px;
+      background: url("../img/advantages/snow.png") no-repeat center/cover;
+      top: -33px;
+      left: calc(50% - 9px);
+    }
+  }
+}
