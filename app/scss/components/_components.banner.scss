@@ -1,0 +1,185 @@
+/*
+    banner style
+ */
+
+.banner {
+  background: url("../img/banne/bg.jpg") no-repeat center/cover;
+  padding: 99px 0 145px;
+  position: relative;
+  z-index: 9;
+  overflow: hidden;
+
+  @include mq(md) {
+    padding: 49px 0 45px;
+  }
+
+  &__content {
+    position: relative;
+
+    figure.logo {
+      justify-content: center;
+
+      @include mq(md) {
+        display: block;
+      }
+
+      img {
+        margin: 0 auto;
+
+        &.moschino {
+          margin: 2px auto 0;
+        }
+      }
+    }
+
+    h2 {
+      text-align: center;
+      max-width: 555px;
+      margin: 17px auto 82px;
+
+      @include mq(md) {
+        margin: 22px auto 23px;
+      }
+    }
+
+    .sale {
+      margin: 0 auto -2%;
+    }
+
+    &-img {
+
+      @include mq(md) {
+        width: 531px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      img {
+        position: absolute;
+        z-index: -1;
+
+        &.black {
+          bottom: -170px;
+          left: -150px;
+
+          @include mq(lg) {
+            width: 531px;
+            bottom: -120px;
+          }
+
+          @include mq(md) {
+            position: static;
+            width: 100%;
+          }
+        }
+
+        &.white {
+          top: -25px;
+          right: -215px;
+
+          @include mq(lg) {
+            width: 664px;
+            top: 25px;
+          }
+
+          @include mq(md) {
+            display: none;
+          }
+        }
+      }
+
+      svg {
+        width: 677px;
+        height: 741px;
+        position: absolute;
+        top: 186px;
+        left: -673px;
+        z-index: -3;
+
+        @include mq(lg) {
+          left: -373px;
+        }
+
+        @include mq(md) {
+          width: 374px;
+          height: 409px;
+          top: 42px;
+          left: -115px;
+        }
+      }
+    }
+
+    .price {
+      margin: 39px auto 21px;
+      text-align: center;
+
+      @include mq(md) {
+        margin-top: -5%;
+      }
+    }
+
+    .to-order {
+      margin: 0 auto;
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      width: 739px;
+      height: 766px;
+      background: #ffa5ba;
+      border-radius: 25% 75% 25% 75% / 25% 75% 25% 75%;
+      top: -417px;
+      right: -651px;
+      z-index: -1;
+
+      @include mq(md) {
+        width: 365px;
+        height: 378px;
+        top: -248px;
+        right: -231px;
+      }
+    }
+
+    &:after {
+      /* скрыть на lg */
+      width: 219px;
+      height: 190px;
+      background: url("../img/advantages/ellipse.png") no-repeat center/cover;
+      transform: matrix(0.26, -0.97, -0.97, -0.26, 0, 0);
+      top: -52px;
+      left: -226px;
+
+      @include mq(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 336px;
+    background: url("../img/banne/snow.png") no-repeat center/cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    @include mq(md) {
+      width: 1920px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include mq(s) {
+      left: -955px;
+      transform: none;
+    }
+  }
+}

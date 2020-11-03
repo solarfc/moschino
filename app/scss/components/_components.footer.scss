@@ -1,0 +1,56 @@
+/*
+    footer style
+ */
+
+.footer {
+  background: #eeb2c0;
+  padding: 16px 0 17px;
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 11;
+
+    @include mq(md) {
+      display: block;
+      text-align: center;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 14px;
+      color: #666;
+
+      &.politic {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:nth-child(2) {
+
+        @include mq(md) {
+          margin: 5px auto;
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      width: 260px;
+      height: 221px;
+      background: url("../img/ellipse.png") no-repeat center/auto;
+      position: absolute;
+      top: -198px;
+      right: -216px;
+
+      @include mq(lg) {
+        display: none;
+      }
+    }
+  }
+}

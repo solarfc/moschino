@@ -6,13 +6,22 @@
   background: #f6d2d6;
   padding: 101px 0 45px;
 
+  @include mq(md) {
+    padding: 52px 0 15px;
+  }
+
   .container {
     position: relative;
 
     &:before, &:after {
+      /* скрыть на lg */
       content: "";
       display: block;
       position: absolute;
+
+      @include mq(lg) {
+        display: none;
+      }
     }
 
     &:before {
@@ -34,6 +43,7 @@
 
   &__content {
     position: relative;
+    z-index: 9;
 
     &-block {
       display: flex;
@@ -72,6 +82,13 @@
       &__img {
         position: absolute;
         //z-index: 9;
+
+        img {
+
+          @include mq(lg) {
+            width: 100%;
+          }
+        }
       }
 
       &:first-child {
@@ -96,11 +113,25 @@
         .advantages__content-block__img {
           top: 54px;
           left: 92px;
+
+          @include mq(lg) {
+            width: 400px;
+            top: 124px;
+          }
+
+          @include mq(md) {
+            top: 134px;
+            left: -50px;
+          }
         }
       }
 
       &:nth-child(2) {
         margin: 228px auto 23px;
+
+        @include mq(md) {
+          margin-top: 328px;
+        }
 
         figure {
 
@@ -122,6 +153,29 @@
         .advantages__content-block__img {
           top: 68px;
           right: 101.7px;
+
+          @include mq(lg) {
+            width: 425px;
+            top: 118px;
+            right: 122.7px;
+          }
+
+          @include mq(md) {
+            top: 128px;
+            right: -40px;
+          }
+        }
+
+        &:before {
+          content: "";
+          display: block;
+          width: 219px;
+          height: 190px;
+          background: url("../img/advantages/ellipse.png") no-repeat center/cover;
+          position: absolute;
+          bottom: -121px;
+          right: -250px;
+          z-index: 11;
         }
       }
     }
@@ -130,25 +184,58 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+
+      @include mq(s) {
+        position: relative;
+        left: 0;
+        transform: none;
+      }
     }
 
     .sale {
       top: 195px;
+
+      @include mq(md) {
+        top: 245px;
+      }
+
+      @include mq(s) {
+        top: 0;
+        margin: 0 auto;
+      }
     }
 
     .price {
       top: 288px;
       text-align: center;
 
+      @include mq(md) {
+        top: 338px;
+      }
+
+      @include mq(s) {
+        top: 0;
+        margin: 21px auto;
+      }
+
       span {
 
         &.old-price {
           margin-right: 0;
+
+          @include mq(s) {
+            margin-right: 17px;
+          }
         }
 
         &.new-price {
           display: block;
           color: #fff;
+
+          @include mq(s) {
+            display: inline-block;
+            color: #af0b47;
+          }
         }
       }
     }
@@ -158,10 +245,16 @@
     }
 
     &:before, &:after {
+      /* скрыть на s */
       content: "";
       display: block;
       position: absolute;
       transform: translateX(-50%);
+      z-index: -1;
+
+      @include mq(s) {
+        display: none;
+      }
     }
 
     &:before {
@@ -171,6 +264,20 @@
       border-radius: 50%;
       top: 0;
       left: 50%;
+
+      @include mq(lg) {
+        width: 490px;
+        height: 490px;
+        top: 45%;
+        left: 49%;
+        transform: translate(-50%, -50%);
+      }
+
+      @include mq(md) {
+        width: 400px;
+        height: 400px;
+        top: 43%;
+      }
     }
 
     &:after {
@@ -179,6 +286,19 @@
       background: url("../img/advantages/snow.png") no-repeat center/cover;
       top: -33px;
       left: calc(50% - 9px);
+
+      @include mq(lg) {
+        width: 380px;
+        height: 170px;
+        top: 33px;
+        left: calc(49% - 9px);
+      }
+
+      @include mq(md) {
+        width: 310px;
+        height: 139px;
+        top: 110px;
+      }
     }
   }
 }

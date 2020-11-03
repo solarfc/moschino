@@ -7,20 +7,80 @@
   padding: 49px 0 131px;
   position: relative;
 
+  @include mq(md) {
+    padding: 20px 0 45px;
+  }
+
   &__content {
     position: relative;
 
-    img.logo {
-      margin: 0;
+    figure.logo {
+      display: block;
+
+      img {
+
+        &.love {
+
+          @include mq(md) {
+            margin: 0 auto;
+          }
+        }
+
+        &.moschino {
+          margin: 2px 0 0 0;
+
+          @include mq(md) {
+            margin: 2px auto 0;
+          }
+        }
+      }
     }
 
     h1 {
       max-width: 555px;
       margin: 37px 0 35px;
+      position: relative;
+
+      @include mq(md) {
+        margin: 22px auto 23px;
+        text-align: center;
+      }
+
+      &:before, &:after {
+        /* скрыть на lg */
+        content: "";
+        display: block;
+        width: 30px;
+        height: 150px;
+        background: #fff;
+        opacity: 0.5;
+        filter: blur(5px);
+        border-radius: 20px;
+        position: absolute;
+
+        @include mq(lg) {
+          display: none;
+        }
+      }
+
+      &:before {
+        top: 92px;
+        left: -207px;
+        transform: rotate(75deg);
+      }
+
+      &:after {
+        top: 91px;
+        left: -205px;
+        transform: rotate(-15deg);
+      }
     }
 
     .sale {
 
+      @include mq(md) {
+        margin: 0 auto;
+      }
     }
 
     &-img {
@@ -30,31 +90,135 @@
       top: 59px;
       right: 81.52px;
 
+      @include mq(lg) {
+        right: -60px;
+      }
+
+      @include mq(md) {
+        width: 680px;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: -3% 0px -5%;
+      }
+
+      @include mq(s) {
+        width: 100%;
+        max-width: 680px;
+        margin: 35px auto 0;
+      }
+
       .video {
         background: #f88ca5;
         position: absolute;
-        top: 252px;
+        top: 272px;
         left: 29px;
+
+        @include mq(md) {
+          top: 252px;
+        }
+
+        @include mq(s) {
+          top: 25px;
+          left: 0;
+        }
       }
 
       img {
         margin: 0;
+        pointer-events: none;
 
         &.boot {
           position: relative;
           z-index: 9;
+
+          @include mq(md) {
+            width: 100%;
+          }
+
+          @include mq(s) {
+            width: 110%;
+            min-width: 320px;
+            max-width: 680px;
+            left: -17.24%;
+          }
         }
 
         &.girl {
           position: absolute;
           top: -58px;
           right: -56px;
+          z-index: 11;
+
+          @include mq(lg) {
+            display: none;
+          }
+
+          @include mq(md) {
+            display: block;
+          }
+
+          @include mq(s) {
+            width: 41%;
+            min-width: 120px;
+            max-width: 256px;
+            top: -26px;
+            right: 0;
+          }
         }
       }
     }
 
     .price {
       margin: 39px 0 21px 25px;
+
+      @include mq(md) {
+        text-align: center;
+        margin: 0 auto 21px;
+      }
+    }
+
+    .to-order {
+
+      @include mq(md) {
+        margin: 0 auto;
+      }
+    }
+
+    &:before, &:after {
+      content: "";
+      box-sizing: border-box;
+      display: block;
+      opacity: 0.4;
+      position: absolute;
+    }
+
+    &:before {
+      /* скрыть на md */
+      width: 160px;
+      height: 160px;
+      border: 40px solid #fff;
+      top: 110px;
+      right: -95px;
+      transform: rotate(15deg);
+
+      @include mq(md) {
+        display: none;
+      }
+    }
+
+    &:after {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 30px solid #fff;
+      top: -159px;
+      right: 677px;
+
+      @include mq(md) {
+        top: -130px;
+        right: -125px;
+      }
     }
   }
 

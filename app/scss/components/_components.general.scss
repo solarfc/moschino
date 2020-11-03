@@ -107,6 +107,23 @@ p {
   }
 }
 
+figure.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    margin: 0;
+
+    &.love {
+
+    }
+
+    &.moschino {
+      margin: 0 0 1px 10.36px;
+    }
+  }
+}
+
 .sale {
   box-sizing: border-box;
   width: 235px;
@@ -204,22 +221,28 @@ p {
     }
   }
 
-  p {
-    line-height: 23px;
-    color: #222;
+  p.period {
     margin-top: 5px;
-
-    output {
-      font-family: $isb, sans-serif;
-      color: #5e2552;
-    }
   }
 }
+
+p.period {
+  line-height: 23px;
+  color: #222;
+
+  output {
+    font-family: $isb, sans-serif;
+    color: #5e2552;
+  }
+}
+
 
 .video {
   width: 193px;
   height: 192px;
-  border-radius: 31% 69% 42% 58% / 42% 61% 39% 58%;
+  border-radius: 25% 75% 50% 50% / 25% 60% 40% 75%;
+  transition: all 0.75s ease-in-out;
+  //z-index: 15;
 
   a {
     width: 90px;
@@ -227,11 +250,12 @@ p {
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
     position: absolute;
+    z-index: 15;
     top: 51px;
     left: 49px;
     transition: all 0.75s ease-in-out;
-    z-index: 15;
 
     &:before, &:after {
       content: "";
@@ -258,8 +282,13 @@ p {
       top: 30px;
       left: 38px;
     }
+  }
 
-    &:hover {
+  &:hover {
+    border-radius: 70% 30% 79% 21% / 37% 54% 46% 63%;
+    //border-radius: 75% 25% 50% 50% / 60% 25% 75% 40%;
+
+    a {
 
       &:before {
         opacity: 1;
@@ -281,7 +310,7 @@ p {
     width: 72px;
     height: 56px;
     background: #ffa5ba !important;
-    border-radius: 75% 25% 25% 75% / 50% 50% 50% 50%;
+    border-radius: 70% 30% 30% 70% / 50% 50% 50% 50%;
     color: transparent !important;
     position: relative;
     transition: all 0.75s ease-in-out;
