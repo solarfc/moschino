@@ -49,13 +49,33 @@
       display: flex;
       //justify-content: space-between;
 
+      @include mq(xs) {
+        display: block;
+      }
+
       figure {
         width: 263px;
         position: relative;
 
+        @include mq(xs) {
+          width: 90%;
+          min-width: 263px;
+        }
+
         h5 {
+          font-size: 22px;
+          line-height: 33px;
           color: #5e2552;
-          margin: 0 0 15px 88px;
+          margin: 0 0 15px 78px;
+
+          @include mq(xs) {
+            max-width: 263px;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 24px;
         }
 
         &:before {
@@ -66,8 +86,8 @@
           color: #5e2552;
           display: block;
           box-sizing: border-box;
-          width: 70px;
-          padding: 17px 0;
+          width: 66px;
+          padding: 15px 0;
           background: url("../img/advantages/star.png") no-repeat center/cover;
           position: absolute;
           top: 0;
@@ -76,6 +96,10 @@
 
         &:nth-child(2) {
           margin-left: auto;
+
+          @include mq(xs) {
+            margin: 22px 0 0;
+          }
         }
       }
 
@@ -83,10 +107,24 @@
         position: absolute;
         //z-index: 9;
 
+        @include mq(xs) {
+          position: relative;
+        }
+
         img {
 
           @include mq(lg) {
             width: 100%;
+          }
+        }
+
+        &:before {
+          display: block;
+          position: absolute;
+          z-index: -1;
+
+          @include mq(md) {
+            content: "";
           }
         }
       }
@@ -123,6 +161,29 @@
             top: 134px;
             left: -50px;
           }
+
+          @include mq(s) {
+            width: 360px;
+            top: 145px;
+          }
+
+          @include mq(xs) {
+            width: 131%;
+            min-width: 382px;
+            max-width: 490px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: -4% 0 -85px;
+          }
+
+          &:before {
+            width: 219px;
+            height: 190px;
+            background: url("../img/advantages/ellipse.png") no-repeat center/cover;
+            bottom: 75.06px;
+            left: 45.5px;
+          }
         }
       }
 
@@ -131,6 +192,10 @@
 
         @include mq(md) {
           margin-top: 328px;
+        }
+
+        @include mq(xs) {
+          margin-top: 0;
         }
 
         figure {
@@ -152,17 +217,40 @@
 
         .advantages__content-block__img {
           top: 68px;
-          right: 101.7px;
+          right: 103.7px;
 
           @include mq(lg) {
             width: 425px;
             top: 118px;
-            right: 122.7px;
+            right: 124.7px;
           }
 
           @include mq(md) {
             top: 128px;
             right: -40px;
+          }
+
+          @include mq(s) {
+            width: 395px;
+            top: 140px;
+          }
+
+          @include mq(xs) {
+            width: 160%;
+            min-width: 466px;
+            max-width: 600px;
+            top: 0;
+            left: calc(50% - 35px);
+            transform: translateX(-50%);
+            margin: -30px 0 -50px;
+          }
+
+          &:before {
+            width: 256px;
+            height: 192px;
+            background: url("../img/gallery/ellipse.png") no-repeat center/cover;
+            bottom: 36.51px;
+            right: 15.02px;
           }
         }
 
@@ -232,9 +320,12 @@
           display: block;
           color: #fff;
 
+          @include mq(md) {
+            color: #af0b47;
+          }
+
           @include mq(s) {
             display: inline-block;
-            color: #af0b47;
           }
         }
       }
@@ -245,14 +336,14 @@
     }
 
     &:before, &:after {
-      /* скрыть на s */
+      /* скрыть на md */
       content: "";
       display: block;
       position: absolute;
       transform: translateX(-50%);
       z-index: -1;
 
-      @include mq(s) {
+      @include mq(md) {
         display: none;
       }
     }
@@ -272,12 +363,6 @@
         left: 49%;
         transform: translate(-50%, -50%);
       }
-
-      @include mq(md) {
-        width: 400px;
-        height: 400px;
-        top: 43%;
-      }
     }
 
     &:after {
@@ -292,12 +377,6 @@
         height: 170px;
         top: 33px;
         left: calc(49% - 9px);
-      }
-
-      @include mq(md) {
-        width: 310px;
-        height: 139px;
-        top: 110px;
       }
     }
   }

@@ -3,11 +3,27 @@
 var myWidth = window.innerWidth,
     myHeight = window.innerHeight;
 console.log("width ".concat(myWidth, " \n height ").concat(myHeight));
+document.querySelector('html').style.overflowY = 'hidden';
 
 window.onload = function () {
+  setTimeout(function () {
+    document.querySelector('.loader').style.cssText = 'opacity: 0; z-index: -5';
+    document.querySelector('html').style.overflowY = 'scroll';
+  }, 1500);
+  /*
+      slow scroll
+   */
+
+  $('.catalog__block-title a').on('click', function () {
+    var href = $(this).attr('href');
+    $('root, html').animate({
+      scrollTop: $(href).offset().top
+    }, 800);
+  });
   /*
       increase date
    */
+
   var today = new Date(),
       tomorrow = new Date(),
       day,
@@ -33,6 +49,10 @@ window.onload = function () {
 
 
   $.fancybox.defaults.loop = true;
+  /*
+      description slider
+   */
+
   $('.description__content-slider').owlCarousel({
     loop: true,
     nav: true,
@@ -40,14 +60,24 @@ window.onload = function () {
       0: {
         items: 1
       },
-      768: {
-        items: 2
-      },
       1200: {
         items: 3
       }
     }
   });
+  /*
+      gallery slider on mobile
+   */
+
+  $('.gallery__content-mobile').owlCarousel({
+    items: 1,
+    loop: true,
+    nav: true,
+    autoHeight: true
+  });
+  /*
+      change size & color & photo
+   */
 
   var bootsColors = document.querySelectorAll('.catalog__block.boots .color figure span'),
       bootsActiveColor = document.querySelector('.catalog__block.boots .color p output'),
@@ -102,6 +132,7 @@ window.onload = function () {
 
             color[j].classList.add('active');
           } else {
+            var activeClass = color[j].className;
             var active = color[j].dataset.color;
             var activeModel = color[j].dataset.model;
 
@@ -114,6 +145,7 @@ window.onload = function () {
             setTimeout(function () {
               activeColor.innerHTML = active;
               bigImg.src = "img/catalog/".concat(activeModel, "/big.png");
+              bigImg.className = "boot ".concat(activeClass);
 
               for (var _i5 = 0; _i5 < link.length; _i5++) {
                 link[_i5].href = "img/catalog/".concat(activeModel, "/").concat(_i5 + 1, ".jpg");
@@ -146,47 +178,124 @@ window.onload = function () {
   $('.review__content-block').owlCarousel({
     items: 2,
     loop: true,
-    nav: true
+    nav: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2
+      }
+    }
   });
   /*
       political
    */
 
   var bodyFilter = document.querySelector('.body__filter'),
-      politicalOpen = document.querySelector('p.politic'),
       political = document.querySelector('.political'),
+      feedback = document.querySelector('.feedback'),
+      politicalOpen = document.querySelector('p.politic'),
+      feedbackOpen = document.querySelector('p.feed'),
       politicalClose = document.querySelector('img.close'),
-      closePolitical = function closePolitical() {
+      feedbackClose = document.querySelector('span.close'),
+      formTitle = document.querySelector('.feedback p'),
+      inputValue = document.querySelector('.feedback input'),
+      textareaValue = document.querySelector('.feedback textarea'),
+      form = document.querySelector('.feedback form'),
+      changeForm = function changeForm() {
+    inputValue.value = '';
+    textareaValue.value = '';
+
+    for (var _i6 = 0; _i6 < form.children.length; _i6++) {
+      form.children[_i6].style.opacity = '1';
+    }
+
+    formTitle.style.opacity = '0';
+  },
+      open = function open(block) {
+    bodyFilter.style.cssText = 'background: rgba(0, 0, 0, .8); z-index: 9999';
+    block.style.cssText = 'transform: translate(-50%, -50%) rotateX(0deg); z-index: 99999';
+    document.querySelector('html').style.overflowY = 'hidden';
+  },
+      close = function close(block) {
+    bodyFilter.style.cssText = 'background: rgba(0, 0, 0, 0); z-index: -5';
+    block.style.cssText = 'transform: translate(-50%, -50%) rotateX(-90deg); z-index: -5';
     document.querySelector('html').style.overflowY = 'scroll';
-    bodyFilter.style.zIndex = '-5';
-    bodyFilter.style.background = 'rgba(0, 0, 0, 0)';
-    political.style.cssText = "transform: translate(-50%, -50%) rotateX(-90deg);\n        z-index: -5;";
+    setTimeout(changeForm, 500);
   };
 
-  politicalOpen.addEventListener('click', function () {
-    document.querySelector('html').style.overflowY = 'hidden';
-    bodyFilter.style.zIndex = '999';
-    bodyFilter.style.background = 'rgba(0, 0, 0, 0.8)';
-    political.style.cssText = "transform: translate(-50%, -50%) rotateX(0deg);\n        z-index: 9999;";
+  inputValue.addEventListener('change', function () {
+    inputValue.value;
   });
-  politicalClose.addEventListener('click', closePolitical);
-  bodyFilter.addEventListener('click', closePolitical); // $('.description__content-slider').owlCarousel({
-  //     // // items: 3,
-  //     // loop: true,
-  //     // nav: true,
-  //     // navText: ['<div class="prev-arrow"></div>, <div class="next-arrow"></div>']
-  // })
-  // /*
-  //     change href on mobile
-  //  */
-  //
+  textareaValue.addEventListener('change', function () {
+    textareaValue.value;
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  if (/iPhone|Android/i.test(navigator.userAgent)) {
-    document.querySelector('.gallery__content-block').classList.add('owl-carousel');
-    $('.gallery__content-block').owlCarousel({
-      items: 1,
-      loop: true,
-      autoHeight: true
+    if (inputValue.value !== '' && textareaValue.value !== '') {
+      for (var _i7 = 0; _i7 < form.children.length; _i7++) {
+        form.children[_i7].style.opacity = '0';
+      }
+
+      formTitle.style.opacity = '1';
+    }
+  });
+  politicalOpen.addEventListener('click', function () {
+    open(political);
+  });
+  feedbackOpen.addEventListener('click', function () {
+    open(feedback);
+  });
+  bodyFilter.addEventListener('click', function () {
+    close(political);
+  });
+  bodyFilter.addEventListener('click', function () {
+    close(feedback);
+  });
+  politicalClose.addEventListener('click', function () {
+    close(political);
+  });
+  feedbackClose.addEventListener('click', function () {
+    close(feedback);
+  });
+
+  var toggleBucket = function toggleBucket() {
+    var bucket = document.querySelector('a.bucket'),
+        topOfWindow = window.pageYOffset + innerHeight,
+        catalogBlockTopPosition = document.querySelector('.catalog').offsetTop,
+        reviewBlockTopPosition = document.querySelector('.review').offsetTop,
+        footerLinkTopPosition = document.querySelector('.footer').offsetTop;
+
+    if (topOfWindow > catalogBlockTopPosition && topOfWindow < reviewBlockTopPosition || topOfWindow > footerLinkTopPosition) {
+      bucket.style.opacity = '0';
+      bucket.style.zIndex = '-5';
+    } else {
+      bucket.style.opacity = '1';
+      bucket.style.zIndex = '999';
+    }
+  };
+
+  if (/iPhone|iPod|iPad|Android/i.test(navigator.userAgent)) {
+    var href = $('#mobile-order').offset().top - innerHeight;
+    $('.to-order a, a.bucket').on('click', function () {
+      $('html, body').animate({
+        scrollTop: href
+      }, 800);
+    });
+    window.addEventListener('scroll', function () {
+      toggleBucket();
+    });
+    window.addEventListener('resize', function () {
+      toggleBucket();
+    });
+  } else {
+    var _href = $('#catalog').offset().top;
+    $('.to-order a, a.bucket').on('click', function () {
+      $('html, body').animate({
+        scrollTop: _href
+      }, 800);
     });
   }
 };

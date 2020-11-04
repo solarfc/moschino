@@ -103,10 +103,27 @@
       }
 
       @include mq(s) {
-        width: 100%;
-        max-width: 680px;
         margin: 35px auto 0;
+        width: 100%;
+        max-width: 540px;
       }
+
+      @include mq(xs) {
+        max-width: 380px;
+      }
+
+      //@include mq(s) {
+      //  width: 110%;
+      //  //width: 100%;
+      //  max-width: 680px;
+      //  left: -17.24%;
+      //
+      //  margin: 35px auto 0;
+      //}
+      //
+      //@include mq(xs) {
+      //  width: 125%;
+      //}
 
       .video {
         background: #f88ca5;
@@ -119,9 +136,29 @@
         }
 
         @include mq(s) {
-          top: 25px;
+          top: 202px;
           left: 0;
         }
+
+        @include mq(xs) {
+          top: 12px;
+          left: -46px;
+        }
+
+        //@include mq(s) {
+        //  top: 25px;
+        //  left: 17.24%;
+        //}
+
+        //@include mq(xs) {
+        //  top: 0;
+        //  left: 0;
+        //}
+        //
+        //@include mq(xs) {
+        //  top: 0px;
+        //  left: -46px;
+        //}
       }
 
       img {
@@ -137,11 +174,20 @@
           }
 
           @include mq(s) {
-            width: 110%;
-            min-width: 320px;
-            max-width: 680px;
-            left: -17.24%;
+            width: 125%;
+            left: -17%;
           }
+
+          //@include mq(s) {
+          //  width: 110%;
+          //  min-width: 320px;
+          //  max-width: 680px;
+          //  left: -17.24%;
+          //}
+          //
+          //@include mq(xs) {
+          //  width: 124%;
+          //}
         }
 
         &.girl {
@@ -164,6 +210,10 @@
             max-width: 256px;
             top: -26px;
             right: 0;
+          }
+
+          @include mq(xs) {
+            top: -16px;
           }
         }
       }
@@ -230,6 +280,15 @@
     background: url("../img/snow.png") no-repeat center/cover;
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
+
+    @include mq(s) {
+      width: 768px;
+      height: 370px;
+    }
+
+    @include mq(xs) {
+      right: -50px;
+    }
   }
 }

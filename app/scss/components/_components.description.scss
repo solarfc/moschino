@@ -6,6 +6,10 @@
   background: #fff5f7;
   padding: 140px 0 344px;
 
+  @include mq(lg) {
+    padding-bottom: 365px;
+  }
+
   @include mq(md) {
     padding: 45px 0;
   }
@@ -34,18 +38,27 @@
 
       @include mq(lg) {
         width: 380px !important;
-        //width: 710px !important;
         left: 0;
       }
 
       @include mq(md) {
-        position: static;
-        width: 720px !important;
+        top: 105px;
       }
 
-      @include mq(md) {
-        width: 380px !important;
+      @include mq(s) {
+        position: relative;
+        top: 0;
+        left: 0;
         margin: 0 auto;
+      }
+
+      @include mq(xs) {
+        width: 110% !important;
+        min-width: 320px;
+        max-width: 380px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
       }
 
       &__item {
@@ -58,10 +71,19 @@
         position: relative;
         //overflow: hidden;
 
-        @include mq(md) {
-          width: 320px;
-          //box-shadow: none;
+        //@include mq(md) {
+        //  width: 320px;
+        //  //box-shadow: none;
+        //}
+        //
+        //@include mq(s) {
+        //  width: 340px;
+        //}
+
+        @include mq(xs) {
+          width: 100%;
         }
+
 
         img {
           width: auto !important;
@@ -83,6 +105,11 @@
           color: #5e2552;
           padding: 0 30px;
           margin: 0 0 11px;
+
+          @include mq(xs) {
+            font-size: 22px;
+            line-height: 33px;
+          }
         }
 
         p {
@@ -130,9 +157,16 @@
           padding: 0 20px;
         }
 
-        @include mq(md) {
-          margin: 0 auto;
+        @include mq(xs) {
+          width: 100%;
+          max-width: 380px;
         }
+
+        //@include mq(md) {
+        //  margin: 0 auto;
+        //  padding: 0;
+        //  width: 320px;
+        //}
 
         .owl-next {
 
@@ -151,9 +185,13 @@
         margin-left: 405px;
       }
 
-      @include mq(md) {
+      @include mq(s) {
         display: none;
       }
+
+      //@include mq(md) {
+      //  display: none;
+      //}
 
       span {
         font-family: $isb, sans-serif;
@@ -176,10 +214,29 @@
       @include mq(md) {
         position: relative;
         top: 0;
+        margin: 0;
+        right: -308.53px;
+      }
+
+      @include mq(s) {
+        margin-top: 10px;
         left: calc(50% - 23px);
         transform: translateX(-50%);
-        margin: 0;
       }
+
+      @include mq(xs) {
+        width: 100%;
+        max-width: 464px;
+      }
+
+      //@include mq(md) {
+      //  position: relative;
+      //  top: 0;
+      //  left: calc(50% - 23px);
+      //  transform: translateX(-50%);
+      //  margin: 0;
+      //}
+
     }
   }
 }

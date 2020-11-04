@@ -45,35 +45,82 @@
     }
 
     &-block {
-      width: 790px;
+      width: 800px;
       margin: -58px 0 0 auto;
       position: relative;
       right: -20px;
+      //width: 790px;
+      //margin: -58px 0 0 auto;
+      //position: relative;
+      //right: -20px;
 
       @include mq(lg) {
-        width: 690px;
+        width: 680px;
+        //margin-top: 0;
         right: 0;
-        z-index: 9;
       }
 
       @include mq(md) {
-        width: 720px;
-        margin: 0 auto;
+        margin-top: 10px;
+        width: 100%;
       }
+
+      @include mq(xs) {
+        width: 110%;
+        min-width: 320px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      //@include mq(lg) {
+      //  width: 690px;
+      //  right: 0;
+      //  z-index: 9;
+      //}
+
+      //@include mq(md) {
+      //  width: 720px;
+      //  margin: 10px auto 0;
+      //}
+
+      //@include mq(s) {
+      //  width: 100%;
+      //  max-width: 540px;
+      //  margin-top: 30px;
+      //}
 
       figure {
         box-sizing: border-box;
-        width: 92%;
-        max-width: 360px;
+        //width: 92%;
+        //max-width: 360px;
         padding: 115px 30px 44px;
         background: #e9fffe;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         border-radius: 20px;
         position: relative;
 
-        @include mq(md) {
-          width: 320px;
+        @include mq(s) {
+          padding: 92px 20px 24px;
         }
+
+        //@include mq(md) {
+        //  max-width: 320px;
+        //}
+        //
+        //@include mq(s) {
+        //  width: 100%;
+        //  max-width: 100%;
+        //}
+
+        //@include mq(md) {
+        //  width: 320px;
+        //}
+        //
+        //@include mq(s) {
+        //  width: 100%;
+        //  max-width: 100%;
+        //  box-shadow: none;
+        //}
 
         p {
 
@@ -93,6 +140,11 @@
           position: absolute;
           top: 51px;
           left: 30px;
+
+          @include mq(s) {
+            top: 30px;
+            left: 20px;
+          }
         }
       }
 
@@ -102,6 +154,13 @@
         @include mq(md) {
           width: 380px;
           margin: 20px auto;
+        }
+
+        @include mq(xs) {
+          width: 100%;
+          max-width: 380px;
+          box-sizing: border-box;
+          padding: 0 20px;
         }
 
         .owl-next {
@@ -120,14 +179,14 @@
         background: url("../img/review/snow.png") no-repeat center/cover;
         position: absolute;
         top: 0;
-        right: -5px;
+        right: 0;
       }
     }
 
     >p {
       color: #444;
       position: absolute;
-      bottom: 85px;
+      bottom: 60px;
       right: 0;
       cursor: pointer;
       z-index: 20;
@@ -140,8 +199,13 @@
 
     img.girl {
       position: absolute;
-      bottom: -73px;
+      bottom: -83px;
       left: -263px;
+
+      @include mq(lg) {
+        bottom: -133px;
+        left: -233px;
+      }
 
       @include mq(md) {
         position: static;

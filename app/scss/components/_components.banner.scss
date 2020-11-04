@@ -19,15 +19,21 @@
     figure.logo {
       justify-content: center;
 
-      @include mq(md) {
+      @include mq(s) {
         display: block;
       }
 
       img {
-        margin: 0 auto;
+
+        @include mq(s) {
+          margin: 0 auto;
+        }
 
         &.moschino {
-          margin: 2px auto 0;
+
+          @include mq(s) {
+            margin: 2px auto 0;
+          }
         }
       }
     }
@@ -52,6 +58,15 @@
         width: 531px;
         margin: 0 auto;
         position: relative;
+      }
+
+      @include mq(xs) {
+        width: 146%;
+        max-width: 531px;
+        margin: 0;
+        top: 0;
+        left: 59%;
+        transform: translateX(-50%);
       }
 
       img {
