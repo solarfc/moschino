@@ -114,11 +114,6 @@ h5 {
   line-height: 36px;
 }
 
-h6 {
-  //font-size: 18px;
-  //line-height: 27px;
-}
-
 p {
 
   &.big {
@@ -262,7 +257,6 @@ p.period {
   height: 192px;
   border-radius: 25% 75% 50% 50% / 25% 60% 40% 75%;
   transition: all 0.75s ease-in-out;
-  //z-index: 15;
 
   a {
     width: 90px;
@@ -306,7 +300,6 @@ p.period {
 
   &:hover {
     border-radius: 70% 30% 79% 21% / 37% 54% 46% 63%;
-    //border-radius: 75% 25% 50% 50% / 60% 25% 75% 40%;
 
     a {
 
@@ -550,5 +543,9 @@ a.bucket {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    transform: scale(1.2);
   }
 }

@@ -131,7 +131,7 @@
             background: url("../img/catalog/star.png") no-repeat center/cover;
             position: absolute;
             top: 50%;
-            right: 0;
+            left: 0;
             transform: translateY(-50%);
           }
         }
@@ -256,6 +256,14 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
           }
 
+          @include mq(lg) {
+            width: 29%;
+          }
+
+          @include mq(md) {
+            width: 45%;
+          }
+
           @include mq(s) {
             width: 31%;
             max-width: 100%;
@@ -339,7 +347,7 @@
             output {
               transition: all 0.5s ease-in-out;
               display: inline-block;
-              width: 107px;
+              width: 108px;
 
               span {
                 color: #af0b47;
@@ -511,7 +519,7 @@
       border-radius: 10px;
       margin: 30px 0 0 auto;
 
-      @include mq(md) {
+      @include mq(lg) {
         margin: 25px auto 0;
       }
 
@@ -547,6 +555,16 @@
 
       section {
 
+        .catalog__block-title {
+
+          h4 {
+
+            &:after {
+              left: 23px;
+            }
+          }
+        }
+
         img.boot {
 
           &.black {
@@ -570,8 +588,6 @@
           &.white {
             top: -45px;
             left: -253px;
-            //top: -57px;
-            //left: -253px;
 
             @include mq(lg) {
               top: -55px;
@@ -582,11 +598,6 @@
               top: 255px;
               left: 25px;
             }
-            //
-            //@include mq(md) {
-            //  top: 247px;
-            //  left: 26px;
-            //}
 
             @include mq(s) {
               margin: 0 0;
@@ -648,12 +659,21 @@
 
       section {
 
+        .catalog__block-title {
+
+          h4 {
+
+            &:after {
+              left: 45px;
+            }
+          }
+        }
+
         img.boot {
 
           @include mq(xs) {
             width: 122%;
             left: 58% !important;
-            //transform: translateX(50% + 20px) !important;
           }
 
           &.black {
@@ -673,8 +693,6 @@
           &.white {
             top: 50px;
             left: -232px;
-            //top: 40px;
-            //left: -252px;
 
             @include mq(lg) {
               left: -129px;
@@ -684,15 +702,6 @@
               top: 290px;
               left: 5px;
             }
-
-            //@include mq(lg) {
-            //  left: -149px;
-            //}
-
-            //@include mq(md) {
-            //  top: 291px;
-            //  left: 7px;
-            //}
           }
         }
 

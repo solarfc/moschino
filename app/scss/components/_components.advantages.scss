@@ -47,7 +47,6 @@
 
     &-block {
       display: flex;
-      //justify-content: space-between;
 
       @include mq(xs) {
         display: block;
@@ -105,7 +104,6 @@
 
       &__img {
         position: absolute;
-        //z-index: 9;
 
         @include mq(xs) {
           position: relative;

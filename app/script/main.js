@@ -41,9 +41,8 @@ window.onload = function () {
         period[i].innerHTML = `${day}.${month}.${year.toString().slice(2)}`;
     }
 
-    for(let i = 0; i < document.querySelectorAll('p.year output').length; i++) {
-        document.querySelectorAll('p.year output')[i].innerHTML = year;
-    }
+    document.querySelector('.catalog__block ul li p output').innerHTML = `${year} - ${year + 1}`;
+    document.querySelector('.footer p output').innerHTML = year;
 
     /*
         loop fancybox
@@ -172,7 +171,6 @@ window.onload = function () {
         }
     });
 
-
     /*
         political
      */
@@ -198,12 +196,12 @@ window.onload = function () {
         },
         open = (block) => {
             bodyFilter.style.cssText = 'background: rgba(0, 0, 0, .8); z-index: 9999';
-            block.style.cssText = 'transform: translate(-50%, -50%) rotateX(0deg); z-index: 99999';
+            block.style.cssText = 'transform: translate(-50%, -50%) rotateX(0deg); z-index: 99999; opacity: 1';
             document.querySelector('html').style.overflowY = 'hidden';
         },
         close = (block) => {
             bodyFilter.style.cssText = 'background: rgba(0, 0, 0, 0); z-index: -5';
-            block.style.cssText = 'transform: translate(-50%, -50%) rotateX(-90deg); z-index: -5';
+            block.style.cssText = 'transform: translate(-50%, -50%) rotateX(-90deg); z-index: -5; opacity: 0';
             document.querySelector('html').style.overflowY = 'scroll';
             setTimeout(changeForm, 500);
         };
@@ -250,9 +248,9 @@ window.onload = function () {
             topOfWindow = window.pageYOffset + innerHeight,
             catalogBlockTopPosition = document.querySelector('.catalog').offsetTop,
             reviewBlockTopPosition = document.querySelector('.review').offsetTop,
-            footerLinkTopPosition = document.querySelector('.footer').offsetTop
+            footerTopPosition = document.querySelector('.footer').offsetTop;
 
-        if(topOfWindow > catalogBlockTopPosition && topOfWindow < reviewBlockTopPosition || topOfWindow > footerLinkTopPosition) {
+        if(topOfWindow > catalogBlockTopPosition && topOfWindow < reviewBlockTopPosition || topOfWindow > footerTopPosition) {
             bucket.style.opacity = '0';
             bucket.style.zIndex = '-5';
         } else {
@@ -278,5 +276,4 @@ window.onload = function () {
             $('html, body').animate({scrollTop: href}, 800);
         });
     }
-
 };

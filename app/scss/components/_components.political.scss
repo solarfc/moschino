@@ -11,6 +11,7 @@
   transition: all 0.5s ease-in-out;
   width: 640px;
   background: #fff;
+  opacity: 0;
   z-index: -5;
 
   @include mq(s) {

@@ -112,19 +112,6 @@
         max-width: 380px;
       }
 
-      //@include mq(s) {
-      //  width: 110%;
-      //  //width: 100%;
-      //  max-width: 680px;
-      //  left: -17.24%;
-      //
-      //  margin: 35px auto 0;
-      //}
-      //
-      //@include mq(xs) {
-      //  width: 125%;
-      //}
-
       .video {
         background: #f88ca5;
         position: absolute;
@@ -144,21 +131,6 @@
           top: 12px;
           left: -46px;
         }
-
-        //@include mq(s) {
-        //  top: 25px;
-        //  left: 17.24%;
-        //}
-
-        //@include mq(xs) {
-        //  top: 0;
-        //  left: 0;
-        //}
-        //
-        //@include mq(xs) {
-        //  top: 0px;
-        //  left: -46px;
-        //}
       }
 
       img {
@@ -177,17 +149,6 @@
             width: 125%;
             left: -17%;
           }
-
-          //@include mq(s) {
-          //  width: 110%;
-          //  min-width: 320px;
-          //  max-width: 680px;
-          //  left: -17.24%;
-          //}
-          //
-          //@include mq(xs) {
-          //  width: 124%;
-          //}
         }
 
         &.girl {
